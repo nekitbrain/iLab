@@ -41,7 +41,7 @@ int main()
         case 2:  printf ("x1 = %lf\nx2 = %lf\n", x1, x2);
                  break;
 
-        case infinityroots: printf("Any number.");
+        case infinityroots: printf("Any number.\n");
                  break;
 
         default: printf ("main(): ERROR: nRoots = %d\n", nRoots);
@@ -80,7 +80,7 @@ int quadraticsolver(double a, double b, double c, double* x1, double* x2)
 
                         return 2;
             }
-        else if (D = 0)
+        else if (D == 0)
             {
             *x1 =  -b/(2*a);
 
@@ -116,18 +116,20 @@ void quadraticsolver_test()
     if (n == 1 && x1 == -1)            printf ("Test on %d ok\n", __LINE__);
     else                               printf ("Test on %d BAD: quadraticsolver (0, 1, 1): n = 1, x = -1 expected, but n = %d, x = %lf\n", __LINE__, n, x1);
 
-    n = quadraticsolver(1, -5, 6, &x1, &x2);
+    n = quadraticsolver( 1, 1, 1, &x1, &x2);
 
-    if (n == 2 && x1 == 2 && x2 == 3)  printf ("Test on %d ok\n", __LINE__);
-    else                               printf ("Test on %d BAD: quadraticsolver (1, -5, 6): n = 2, x1 == 2, x2 == 3 expected, but n = %d, x1 = %lf, x2 = %lf\n", __LINE__, n, x1, x2);
+    if (n == 0)                        printf ("Test on %d ok\n", __LINE__);
+    else                               printf ("Test on %d BAD: quadraticsolver (1, 1, 1): n = 0 expected, but n = %d\n", __LINE__, n);
 
     n = quadraticsolver(1, -4, 4, &x1, &x2);
 
     if (n == 1 && x1 == 2)             printf ("Test on %d ok\n", __LINE__);
-    else                               printf ("Test on %d BAD: quadraticsolver (1, -4, 4): n = 1, x = 2 expected, but n = %d, x = %lf", __LINE__, n, x1);
+    else                               printf ("Test on %d BAD: quadraticsolver (1, -4, 4): n = 1, x = 2 expected, but n = %d, x = %lf\n", __LINE__, n, x1);
 
+    n = quadraticsolver(1, -5, 6, &x1, &x2);
 
+    if (n == 2 && x1 == 2 && x2 == 3)  printf ("Test on %d ok\n", __LINE__);
+    else                               printf ("Test on %d BAD: quadraticsolver (1, -5, 6): n = 2, x1 == 2, x2 == 3 expected, but n = %d, x1 = %lf, x2 = %lf\n", __LINE__, n, x1, x2);
     }
-
 
 //-----------------------------------------------------------------------------
