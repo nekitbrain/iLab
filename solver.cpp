@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <math.h>
 
-
 //-----------------------------------------------------------------------------
 
 const int infinityroots = -1;
