@@ -17,7 +17,7 @@ int main()
 
     double a, b, c;
 
-    printf ("\n\nThis is QuadraticKiller - solves quadratic equation. (c) kisnikser\n\n"
+    printf ("\nThis is QuadraticKiller - solves quadratic equation. (c) kisnikser\n\n"
             "Given the equation ax^2+bx+c=0. Enter a: ");
     scanf  ("%lf", &a);
     printf ("                                Enter b: ");
